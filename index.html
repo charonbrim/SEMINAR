@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Juan Dela Cruz - Portfolio</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <h1>Biography</h1>
+    <p>PROFESSIONAL DEVELOPER</p>
+    <nav><a href="#about">About</a> | <a href="#skills">Skills</a> | <a href="#contact">Contact</a></nav>
+  </header>
+
+  <main class="main-wrapper">
+    <div class="content-card">
+      
+      <div class="avatar-placeholder">JDC</div>
+      <h2 id="user-name">Juan Dela Cruz</h2>
+      <p class="subtitle">1st Year BS IT Student at DYCI</p>
+      
+      <div class="status-badge" id="status-display">Status:  Coding</div>
+
+      <div class="status-box">
+        <label><input type="radio" name="status" value="Coding" checked onclick="updateStatus(this.value)"> Coding</label>
+        <label><input type="radio" name="status" value=" Studying" onclick="updateStatus(this.value)"> Studying</label>
+        <label><input type="radio" name="status" value="On Break" onclick="updateStatus(this.value)"> Break</label>
+      </div>
+
+      <hr>
+
+      <section id="about" class="section-block">
+        <h3>About Me</h3>
+        <p>Passionate IT student building web applications[cite: 1]. Learning HTML, CSS, and JS for software defenses[cite: 1, 2].</p>
+      </section>
+
+      <section id="skills" class="section-block">
+        <h3>My Web 101 Goals</h3>
+        <ol type="1">
+          <li>Master HTML5 Markup</li>
+          <li>Design Responsive CSS</li>
+        </ol>
+        <br>
+        <h3>Interests</h3>
+        <ul>
+          <li> Mobile Gaming</li>
+          <li> Music</li>
+        </ul>
+      </section>
+
+      <hr>
+
+      <section id="contact" class="btn-group">
+        <button class="btn btn-primary" onclick="addLike()"> <span id="like-count">0</span> Likes</button>
+        <button class="btn btn-primary" onclick="greetVisitor()"> Say Hello!</button>
+        <!-- <button class="btn btn-secondary" onclick="toggleDarkMode()"> Dark Theme</button> -->
+      </section>
+
+    </div>
+  </main>
+
+  <footer><p>&copy; 2026 Juan Dela Cruz | Web 101</p></footer>
+
+  <!-- JAVASCRIPT -->
+  <script>
+
+    let likes = 0;
+    function addLike() { likes++; document.getElementById("like-count").innerText = likes; }
+    function updateStatus(val) { document.getElementById("status-display").innerText = "Status: " + val; }
+
+    function greetVisitor() {
+      let name = prompt("What is your name?");
+      if (name) alert("Nice to meet you, " + name + "! Thanks for checking out my page.");
+    }
+  </script>
+
+</body>
+</html>
